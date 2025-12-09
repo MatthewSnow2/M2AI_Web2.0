@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f3f3f3;
+}
+
+/* Serif italic for headings */
+.font-serif-italic {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Scroll snap for horizontal carousels */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-snap-start {
+  scroll-snap-align: start;
+}
+
+.scroll-snap-center {
+  scroll-snap-align: center;
+}
+
+/* Animation utilities */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* CTA button hover effects */
+.cta-button {
+  @apply inline-block px-6 py-3 font-semibold rounded-lg transition-all duration-300;
+}
+
+.cta-button:hover {
+  @apply transform -translate-y-0.5 shadow-lg;
+}
+
+.cta-button-orange {
+  @apply cta-button bg-orange text-white;
+}
+
+.cta-button-orange:hover {
+  @apply bg-orange-light;
+}
+
+.cta-button-teal {
+  @apply cta-button bg-teal text-white;
+}
+
+.cta-button-teal:hover {
+  @apply bg-teal-light;
+}
+
+/* Form input focus effects */
+.form-input {
+  @apply w-full px-4 py-3 bg-navy/80 border border-teal/30 rounded-lg text-white placeholder-gray-400 transition-all duration-300;
+}
+
+.form-input:focus {
+  @apply outline-none border-teal ring-2 ring-teal/20;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300;
+}
+
+.card-hover:hover {
+  @apply transform -translate-y-1 shadow-xl;
+}
+
+/* Section transitions */
+.section-transition {
+  @apply transition-colors duration-500;
+}
+
+/* Backdrop blur for modals */
+.backdrop-blur-modal {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for skill carousel */
+.skill-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.skill-carousel::-webkit-scrollbar-track {
+  background: rgba(20, 184, 166, 0.1);
+  border-radius: 3px;
+}
+
+.skill-carousel::-webkit-scrollbar-thumb {
+  background: rgba(20, 184, 166, 0.5);
+  border-radius: 3px;
+}
+
+.skill-carousel::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 184, 166, 0.7);
+}
+
+/* 3D Card Flip Utilities */
+.preserve-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Perspective for 3D carousel */
+.perspective-1000 {
+  perspective: 1000px;
+}

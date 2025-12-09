@@ -1,163 +1,390 @@
-import { CarouselImage, SectionData } from './types';
+import { CarouselImage, SectionData, ClaudeSkill, VoiceAgent, FormOption, WorkflowItem, ProjectStory } from './types';
 
+// Carousel images with section mapping
+// Note: Contact (carousel_09) is moved to position 12 (last section)
 export const CAROUSEL_IMAGES: CarouselImage[] = [
   {
     id: 1,
-    url: "https://picsum.photos/id/1015/600/600",
-    alt: "Landscape",
-    rotation: 0
+    url: "/images/carousel_01_claude_skills_final.png",
+    alt: "Claude Skills",
+    rotation: 0,
+    sectionId: "claude-skills"
   },
   {
     id: 2,
-    url: "https://picsum.photos/id/1011/600/600",
-    alt: "Woman in boat",
-    rotation: 30
+    url: "/images/carousel_02_customgpts.png",
+    alt: "Custom GPTs",
+    rotation: 30,
+    sectionId: "custom-gpts"
   },
   {
     id: 3,
-    url: "https://picsum.photos/id/1012/600/600",
-    alt: "Man and dog",
-    rotation: 60
+    url: "/images/carousel_03_chrome_extensions.png",
+    alt: "Chrome Extensions",
+    rotation: 60,
+    sectionId: "chrome-extensions"
   },
   {
     id: 4,
-    url: "https://picsum.photos/id/1013/600/600",
-    alt: "Couple",
-    rotation: 90
+    url: "/images/carousel_04_chatbots.png",
+    alt: "Chatbots",
+    rotation: 90,
+    sectionId: "chatbots"
   },
   {
     id: 5,
-    url: "https://picsum.photos/id/1014/600/600",
-    alt: "Forest",
-    rotation: 120
+    url: "/images/carousel_05_workflows.png",
+    alt: "Workflows",
+    rotation: 120,
+    sectionId: "workflows"
   },
   {
     id: 6,
-    url: "https://picsum.photos/id/1016/600/600",
-    alt: "Mountains",
-    rotation: 150
+    url: "/images/carousel_06_custom_projects.png",
+    alt: "Custom Projects",
+    rotation: 150,
+    sectionId: "custom-projects"
   },
   {
     id: 7,
-    url: "https://picsum.photos/id/1018/600/600",
-    alt: "Road",
-    rotation: 180
+    url: "/images/carousel_07_resources.png",
+    alt: "Resources",
+    rotation: 180,
+    sectionId: "resources"
   },
   {
     id: 8,
-    url: "https://picsum.photos/id/1019/600/600",
-    alt: "Waves",
-    rotation: 210
+    url: "/images/carousel_08_faq.png",
+    alt: "FAQ",
+    rotation: 210,
+    sectionId: "faq"
   },
   {
     id: 9,
-    url: "https://picsum.photos/id/1020/600/600",
-    alt: "Bear",
-    rotation: 240
+    url: "/images/carousel_10_project_blurr.png",
+    alt: "Project Blurr",
+    rotation: 240,
+    sectionId: "project-blurr"
   },
   {
     id: 10,
-    url: "https://picsum.photos/id/1021/600/600",
-    alt: "Fog",
-    rotation: 270
+    url: "/images/carousel_11_voice_agents.png",
+    alt: "Voice Agents",
+    rotation: 270,
+    sectionId: "voice-agents"
   },
   {
     id: 11,
-    url: "https://picsum.photos/id/1022/600/600",
-    alt: "Stars",
-    rotation: 300
+    url: "/images/carousel_12_early_ai_dopters.png",
+    alt: "Early AI Adopters",
+    rotation: 300,
+    sectionId: "early-adopters"
   },
   {
     id: 12,
-    url: "https://picsum.photos/id/1023/600/600",
-    alt: "Cyclist",
-    rotation: 330
+    url: "/images/carousel_09_contact.png",
+    alt: "Contact Us",
+    rotation: 330,
+    sectionId: "contact"
   }
 ];
 
+// Section definitions in display order (dark mode theme)
 export const CONTENT_SECTIONS: SectionData[] = [
   {
+    id: "claude-skills",
+    title: "Claude Skills",
+    subtitle: "AI-Powered Workflows",
+    themeClass: "bg-white/10 backdrop-blur-md text-white",
+    animationType: "fade-up"
+  },
+  {
+    id: "custom-gpts",
+    title: "Custom GPTs",
+    subtitle: "Tailored AI Assistants",
+    themeClass: "bg-white/5 backdrop-blur-sm text-white",
+    animationType: "fade-left"
+  },
+  {
+    id: "chrome-extensions",
+    title: "Chrome Extensions",
+    subtitle: "Browser Productivity",
+    themeClass: "bg-white/10 backdrop-blur-md text-white",
+    animationType: "fade-right"
+  },
+  {
+    id: "chatbots",
+    title: "Chatbots",
+    subtitle: "Conversational AI",
+    themeClass: "bg-teal/10 backdrop-blur-md text-white",
+    animationType: "fade-up"
+  },
+  {
+    id: "workflows",
+    title: "Workflows",
+    subtitle: "Process Automation",
+    themeClass: "bg-white/5 backdrop-blur-sm text-white",
+    animationType: "fade-left"
+  },
+  {
+    id: "custom-projects",
+    title: "Custom Projects",
+    subtitle: "Bespoke Solutions",
+    themeClass: "bg-white/10 backdrop-blur-md text-white",
+    animationType: "fade-right"
+  },
+  {
+    id: "resources",
+    title: "Resources",
+    subtitle: "Learning Center",
+    themeClass: "bg-white/5 backdrop-blur-sm text-white",
+    animationType: "fade-up"
+  },
+  {
+    id: "faq",
+    title: "FAQ",
+    subtitle: "Common Questions",
+    themeClass: "bg-white/10 backdrop-blur-md text-white",
+    animationType: "scale"
+  },
+  {
+    id: "project-blurr",
+    title: "Project Blurr",
+    subtitle: "Featured Work",
+    themeClass: "bg-white/5 backdrop-blur-sm text-white",
+    animationType: "fade-left"
+  },
+  {
+    id: "voice-agents",
+    title: "Voice Agents",
+    subtitle: "AI Voice Assistants",
+    themeClass: "bg-transparent text-white",
+    animationType: "fade-up"
+  },
+  {
+    id: "early-adopters",
+    title: "Early AI Adopters",
+    subtitle: "Join the Community",
+    themeClass: "bg-orange/10 backdrop-blur-md text-white",
+    animationType: "fade-right"
+  },
+  {
+    id: "contact",
+    title: "Contact Us",
+    subtitle: "Let's Connect",
+    themeClass: "bg-white/5 backdrop-blur-sm text-white",
+    animationType: "fade-up"
+  }
+];
+
+// 20 Placeholder Claude Skills for horizontal carousel
+export const CLAUDE_SKILLS: ClaudeSkill[] = [
+  { id: 1, title: "Code Review", description: "Automated code analysis and feedback", icon: "Code" },
+  { id: 2, title: "Documentation", description: "Generate and update technical docs", icon: "FileText" },
+  { id: 3, title: "Data Analysis", description: "Extract insights from complex datasets", icon: "BarChart" },
+  { id: 4, title: "Email Drafting", description: "Professional email composition", icon: "Mail" },
+  { id: 5, title: "Meeting Notes", description: "Summarize and action item extraction", icon: "ClipboardList" },
+  { id: 6, title: "Research", description: "Deep dive into any topic", icon: "Search" },
+  { id: 7, title: "Writing Assistant", description: "Content creation and editing", icon: "PenTool" },
+  { id: 8, title: "Translation", description: "Multi-language support", icon: "Globe" },
+  { id: 9, title: "Brainstorming", description: "Creative ideation sessions", icon: "Lightbulb" },
+  { id: 10, title: "Task Planning", description: "Project breakdown and scheduling", icon: "Calendar" },
+  { id: 11, title: "Customer Support", description: "Response drafting and escalation", icon: "Headphones" },
+  { id: 12, title: "Report Generation", description: "Automated business reports", icon: "FileSpreadsheet" },
+  { id: 13, title: "Social Media", description: "Content strategy and creation", icon: "Share2" },
+  { id: 14, title: "Legal Review", description: "Contract analysis assistance", icon: "Scale" },
+  { id: 15, title: "Sales Enablement", description: "Pitch and proposal support", icon: "TrendingUp" },
+  { id: 16, title: "HR Assistant", description: "Policy and onboarding help", icon: "Users" },
+  { id: 17, title: "Financial Analysis", description: "Budget and forecast support", icon: "DollarSign" },
+  { id: 18, title: "Training Content", description: "Educational material creation", icon: "GraduationCap" },
+  { id: 19, title: "Quality Assurance", description: "Testing and validation", icon: "CheckCircle" },
+  { id: 20, title: "Process Mapping", description: "Workflow visualization", icon: "GitBranch" }
+];
+
+// Voice Agents with Vapi.ai demo links
+export const VOICE_AGENTS: VoiceAgent[] = [
+  {
+    id: "sam",
+    name: "Sam",
+    specialty: "HVAC Services",
+    description: "AI voice agent for HVAC service scheduling, appointment booking, and customer inquiries. Available 24/7 to handle inbound calls.",
+    image: "/images/sam.png",
+    demoUrl: "https://vapi.ai?demo=true&shareKey=54e98134-8ae6-4156-abe7-6c94736ad5de&assistantId=9dba090a-0e04-4784-8381-7ad6ad7fffa9"
+  },
+  {
+    id: "morgan",
+    name: "Morgan",
+    specialty: "Lead Qualification",
+    description: "Outbound AI agent specializing in lead qualification, appointment setting, and initial prospect conversations.",
+    image: "/images/morgan.png",
+    demoUrl: "https://vapi.ai?demo=true&shareKey=54e98134-8ae6-4156-abe7-6c94736ad5de&assistantId=850dc773-39f7-42de-977d-7767c2c97ebb"
+  },
+  {
+    id: "rebecca",
+    name: "Rebecca",
+    specialty: "Electrician Services",
+    description: "Inbound AI voice agent for electrical service businesses. Handles scheduling, quotes, and emergency call routing.",
+    image: "/images/rebecca.png",
+    demoUrl: "https://vapi.ai?demo=true&shareKey=54e98134-8ae6-4156-abe7-6c94736ad5de&assistantId=495c7ad8-1560-44d1-baef-50b3bf8cdcfa"
+  }
+];
+
+// Form options for AI Audit Modal
+export const INDUSTRY_OPTIONS: FormOption[] = [
+  { value: "technology", label: "Technology" },
+  { value: "healthcare", label: "Healthcare" },
+  { value: "finance", label: "Finance" },
+  { value: "retail", label: "Retail" },
+  { value: "manufacturing", label: "Manufacturing" },
+  { value: "professional-services", label: "Professional Services" },
+  { value: "real-estate", label: "Real Estate" },
+  { value: "construction", label: "Construction" },
+  { value: "other", label: "Other" }
+];
+
+export const COMPANY_SIZE_OPTIONS: FormOption[] = [
+  { value: "1-10", label: "1-10 employees" },
+  { value: "11-50", label: "11-50 employees" },
+  { value: "51-200", label: "51-200 employees" },
+  { value: "201-500", label: "201-500 employees" },
+  { value: "500+", label: "500+ employees" }
+];
+
+export const AI_USAGE_OPTIONS: FormOption[] = [
+  { value: "none", label: "No AI tools currently in use" },
+  { value: "basic", label: "Basic AI tools (ChatGPT, etc.)" },
+  { value: "some-integrated", label: "Some integrated AI solutions" },
+  { value: "advanced", label: "Advanced AI implementation" }
+];
+
+export const CHALLENGE_OPTIONS: FormOption[] = [
+  { value: "customer-support", label: "Customer support & response times" },
+  { value: "lead-generation", label: "Lead generation & qualification" },
+  { value: "manual-processes", label: "Manual processes & repetitive tasks" },
+  { value: "data-analysis", label: "Data analysis & insights" },
+  { value: "document-management", label: "Document management & contracts" },
+  { value: "other", label: "Other" }
+];
+
+export const BUDGET_OPTIONS: FormOption[] = [
+  { value: "under-500", label: "Under $500/month" },
+  { value: "500-2000", label: "$500 - $2,000/month" },
+  { value: "2000-5000", label: "$2,000 - $5,000/month" },
+  { value: "5000-plus", label: "$5,000+/month" },
+  { value: "not-sure", label: "Not sure yet" }
+];
+
+// Workflow automation items
+export const WORKFLOW_ITEMS: WorkflowItem[] = [
+  {
     id: 1,
-    title: "The Horizon",
-    subtitle: "Chapter One",
-    content: "The horizon is not a limit, but an invitation. Where the earth meets the sky, we find the courage to begin again.",
-    themeClass: "bg-white text-gray-800"
+    title: "Lead Capture to CRM",
+    description: "Automatically sync new leads from forms, chatbots, and landing pages directly to your CRM.",
+    icon: "UserPlus",
+    details: "Integrates with HubSpot, Salesforce, Pipedrive, and more. Includes lead scoring and automatic assignment."
   },
   {
     id: 2,
-    title: "Solitude",
-    subtitle: "Chapter Two",
-    content: "In the quiet moments on the water, clarity comes not from the answers we seek, but the silence we allow.",
-    themeClass: "bg-gray-100 text-gray-900"
+    title: "Invoice Processing",
+    description: "Extract data from invoices using AI and automatically create entries in your accounting software.",
+    icon: "Receipt",
+    details: "Works with QuickBooks, Xero, FreshBooks. Handles multi-currency and tax calculations."
   },
   {
     id: 3,
-    title: "Companionship",
-    subtitle: "Chapter Three",
-    content: "A loyal friend walks beside us, reminding us that the journey is better shared, even if words are unspoken.",
-    themeClass: "bg-orange-50 text-gray-800"
+    title: "Email Response Automation",
+    description: "AI-powered email drafting and automated responses for common inquiries.",
+    icon: "Mail",
+    details: "Learns your tone and style. Handles customer support, scheduling, and follow-ups."
   },
   {
     id: 4,
-    title: "Connection",
-    subtitle: "Chapter Four",
-    content: "Two souls entwined in the narrative of life, writing a story that neither could pen alone.",
-    themeClass: "bg-white text-gray-800"
+    title: "Social Media Scheduler",
+    description: "AI generates and schedules content across all your social platforms.",
+    icon: "Share2",
+    details: "Optimal timing suggestions, hashtag recommendations, and performance analytics."
   },
   {
     id: 5,
-    title: "Wilderness",
-    subtitle: "Chapter Five",
-    content: "The forest breathes a different kind of time, ancient and patient, waiting for us to slow down.",
-    themeClass: "bg-stone-100 text-stone-800"
+    title: "Document Generation",
+    description: "Auto-generate contracts, proposals, and reports from templates and data.",
+    icon: "FileText",
+    details: "PDF generation, e-signature integration, version control, and approval workflows."
   },
   {
     id: 6,
-    title: "Peaks",
-    subtitle: "Chapter Six",
-    content: "From the summit, the world looks small, and our problems even smaller. Perspective is the gift of the climb.",
-    themeClass: "bg-slate-50 text-slate-800"
+    title: "Appointment Booking",
+    description: "Intelligent scheduling that syncs across calendars and sends reminders.",
+    icon: "Calendar",
+    details: "Buffer time management, timezone handling, and no-show follow-ups."
   },
   {
     id: 7,
-    title: "The Path",
-    subtitle: "Chapter Seven",
-    content: "The road stretches forward, a ribbon of possibility winding through the landscape of our future.",
-    themeClass: "bg-white text-gray-800"
+    title: "Data Sync & Migration",
+    description: "Keep your databases in sync across multiple platforms automatically.",
+    icon: "RefreshCw",
+    details: "Real-time sync, conflict resolution, and scheduled batch processing."
   },
   {
     id: 8,
-    title: "Tides",
-    subtitle: "Chapter Eight",
-    content: "Like the ocean, creativity has its tides. We must learn to ride the waves rather than fight the current.",
-    themeClass: "bg-blue-50 text-blue-900"
-  },
-  {
-    id: 9,
-    title: "Reflection",
-    subtitle: "Chapter Nine",
-    content: "Looking back, we see the patterns that were invisible in the moment. The past is a mirror for the future.",
-    themeClass: "bg-zinc-100 text-zinc-800"
-  },
-  {
-    id: 10,
-    title: "Echoes",
-    subtitle: "Chapter Ten",
-    content: "Our actions resonate long after we are gone, like ripples in a pond or echoes in a canyon.",
-    themeClass: "bg-gray-50 text-gray-800"
-  },
-  {
-    id: 11,
-    title: "Silence",
-    subtitle: "Chapter Eleven",
-    content: "Before the music begins, there is silence. It is the canvas upon which all sound is painted.",
-    themeClass: "bg-neutral-100 text-neutral-900"
-  },
-  {
-    id: 12,
-    title: "Return",
-    subtitle: "Chapter Twelve",
-    content: "Every journey ends where it began, but we are never the same. To return is to know the place for the first time.",
-    themeClass: "bg-white text-gray-800"
+    title: "Report Generation",
+    description: "Automated weekly/monthly reports compiled from multiple data sources.",
+    icon: "BarChart",
+    details: "Custom templates, data visualization, and scheduled email delivery."
   }
 ];
+
+// Custom project showcase items
+export const PROJECT_STORIES: ProjectStory[] = [
+  {
+    id: 1,
+    title: "AI-Powered Real Estate Platform",
+    description: "Custom property matching system using machine learning to connect buyers with their ideal homes.",
+    image: "/images/projects/real-estate.jpg",
+    category: "Real Estate",
+    link: "#"
+  },
+  {
+    id: 2,
+    title: "Healthcare Appointment Assistant",
+    description: "Voice AI system handling patient scheduling and appointment reminders for medical practices.",
+    image: "/images/projects/healthcare.jpg",
+    category: "Healthcare",
+    link: "#"
+  },
+  {
+    id: 3,
+    title: "E-commerce Chatbot",
+    description: "Intelligent shopping assistant that helps customers find products and complete purchases.",
+    image: "/images/projects/ecommerce.jpg",
+    category: "E-commerce",
+    link: "#"
+  },
+  {
+    id: 4,
+    title: "Legal Document Analyzer",
+    description: "AI tool that reviews contracts and highlights key terms, risks, and obligations.",
+    image: "/images/projects/legal.jpg",
+    category: "Legal Tech",
+    link: "#"
+  },
+  {
+    id: 5,
+    title: "Restaurant Booking System",
+    description: "Multi-channel reservation system with AI-powered capacity optimization.",
+    image: "/images/projects/restaurant.jpg",
+    category: "Hospitality",
+    link: "#"
+  },
+  {
+    id: 6,
+    title: "Financial Planning Dashboard",
+    description: "Automated financial reporting and forecasting tool for small businesses.",
+    image: "/images/projects/finance.jpg",
+    category: "Finance",
+    link: "#"
+  }
+];
+
+// External links
+export const CALENDLY_URL = "https://calendly.com/matthew-memyselfplusai/30min";

@@ -1,0 +1,3 @@
+<div class="audit-cta-container">
+      <button onclick="openAuditModal()" class="cta-button-orange">Self-Serve AI Audit</button>
+    </div>
